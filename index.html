@@ -10,70 +10,224 @@
      <!-- Google Fonts (Inter) -->
      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
      
-     <!-- FontAwesome (İkonlar için) -->
+     <!-- İkonlar için -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-     <!-- Özel CSS Dosyası -->
+     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+     <!-- CSS Dosyası -->
      <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- ✅ Navbar -->
-    <nav class="navbar navbar-expand-lg bg-white shadow-sm py-2">
-        <div class="container-fluid d-flex align-items-center justify-content-between">
-            
-            <!-- ✅ Sol Taraf: Logo -->
-            <a class="navbar-brand d-flex align-items-center" href="#">
-                <img src="assets/images/app-logo-goat.svg" alt="Sigortam.net Logo" height="mx-auto">
-                <img src="assets/images/app-logo-title.svg" alt="Sigortam.net Logo" height="mx-auto" class="ms-2">
-            </a>
+    <!-- Modal -->
+    <div class="modal-card" id="modalCard">
+        <img src="assets/images/gift.svg" alt="" class="modal-card-img" />
+        <span class="modal-card-span">Arkadaşlarını Davet Et, 20.000 TL’ye varan hediye çeki kazan!</span>
+        <i class="bx bx-chevron-right" style=" height: 38px;width: 38px; outline-width: 0px;  font-size: 24px; align-content:center;"></i>
+      </div>
 
-            <!-- ✅ Orta Kısım: Menü -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="urunlerimiz" role="button" data-bs-toggle="dropdown">
-                            Ürünlerimiz
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Kasko</a></li>
-                            <li><a class="dropdown-item" href="#">Trafik Sigortası</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Kampanyalar</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Poliçe İptal İşlemleri</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="bilgiMerkezi" role="button" data-bs-toggle="dropdown">
-                            Bilgi Merkezi
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">SSS</a></li>
-                            <li><a class="dropdown-item" href="#">Destek</a></li>
-                        </ul>
-                    </li>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg" style="width: 100% !important; position: fixed; top: 0; left: 0; background-color: #fff !important;z-index: 9999;">
+        <div class="container-fluid">
+          <a href="" class="header-logo" style="text-decoration: none">
+            <div class="app-logo">
+              <img src="assets/images/app-logo-goat.svg" alt="" class="logo" />
+              <img src="assets/images/app-logo-title.svg" alt="" class="logo-title" />
+            </div>
+          </a>
+          <button id="navbarNav" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mx-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown">
+                <a id="urunlerimiz" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Ürünlerimiz </a>
+
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../HTML/kampanyalar.html">Kampanyalar</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Poliçe İşlemleri</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Poliçe İptal Başvuru</a></li>
+                  <li><a class="dropdown-item" href="#">Poliçe İptal Takip</a></li>
+                  
                 </ul>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Bilgi Merkezi </a>
+
+                </li>
+              </li>
+            </ul>
+            <div class="menu">
+              <a href="tel:4442400" aria-label="Yardımcı olmaya hazırız" class="nav-help">
+                <span class="nav-help-title">Yardımcı olmaya hazırız</span>
+                <span class="nav-help-phone">
+                    <i class="bx bx-phone" style="font-size: 24px; margin-right: 6px"></i>444 24 00</span>
+              </a>
+              <a href="">
+                <button type="button" class="sign-button">
+                  <span style="background-color: #0089ec; color: #fff;">Giriş Yap / Üye Ol</span>
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+    <!-- Header -->
+    <header class="text-center my-5" style="background-color: #F5F7F9; padding: 100px 0;">
+        <h1 class="site-title mb-4 font-weight-bold">Sigortada Güvenin Adresi</h1>
+        <div class="site-subtitle mb-4">Doğru Ürün. İyi Fiyat. 7/24 Hizmet.</div>
+    
+    <!-- Sigorta Kategorileri -->
+    <div class="container" style="max-width: 880px; margin:auto;">
+        <div class="row row-cols-2 row-cols-md-3 g-4">
+            <div class="col text-center">
+                <div class="site-card align-items-center justify-content-center">
+                    <a class="site-card-body d-flex flex-column align-items-center">
+                        <img width="110" height="90"
+                            src="assets/images/auto-v2.svg"/>
+                        <p>Kasko</p> 
+                    </a>
+                </div>
             </div>
 
-            <!-- ✅ Sağ Taraf: Telefon Numarası ve Giriş Yap Butonu -->
-            <div class="d-flex align-items-center">
-                <div class="me-3 text-muted text-end">
-                    <small>Yardımcı olmaya hazırız</small> <br>
-                    <i class="fas fa-phone-alt"></i> <strong>444 24 00</strong>
+            <div class="col text-center">
+                <div class="site-card align-items-center justify-content-center">
+                    <a class="site-card-body d-flex flex-column align-items-center">
+                        <img width="110" height="90"
+                            src="assets/images/auto-v2.svg"/>
+                        <p>Kasko</p> 
+                    </a>
                 </div>
-                <a href="#" class="btn btn-primary rounded-pill px-4">Giriş Yap / Üye Ol</a>
+            </div>
+
+            <div class="col text-center">
+                <div class="site-card align-items-center justify-content-center">
+                    <a class="site-card-body d-flex flex-column align-items-center">
+                        <img width="110" height="90"
+                            src="assets/images/auto-v2.svg"/>
+                        <p>Kasko</p> 
+                    </a>
+                </div>
             </div>
 
         </div>
-    </nav>
+        <div class="row row-cols-2 row-cols-md-5 g-4 mt-0">
+            <div class="col text-center">
+                <div class="site-card align-items-center justify-content-center">
+                    <a class="site-card-box d-flex flex-column align-items-center">
+                        <img width="90" height="70"
+                            src="assets/images/electric-vehicle-orange.svg"/>
+                        <span>Trafik Sigortası</span>
+                    </a>
+                </div>
+            </div>
 
-<!-- ✅ FOOTER BAŞLANGIÇ -->
+            <div class="col text-center">
+                <div class="site-card align-items-center justify-content-center">
+                    <a class="site-card-box d-flex flex-column align-items-center">
+                        <img width="90" height="70"
+                            src="assets/images/electric-vehicle-orange.svg"/>
+                        <span>Trafik Sigortası</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col text-center">
+                <div class="site-card align-items-center justify-content-center">
+                    <a class="site-card-box d-flex flex-column align-items-center">
+                        <img width="90" height="70"
+                            src="assets/images/electric-vehicle-orange.svg"/>
+                        <span>Trafik Sigortası</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col text-center">
+                <div class="site-card align-items-center justify-content-center">
+                    <a class="site-card-box d-flex flex-column align-items-center">
+                        <img width="90" height="70"
+                            src="assets/images/electric-vehicle-orange.svg"/>
+                        <span>Trafik Sigortası</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col text-center">
+                <div class="site-card align-items-center justify-content-center">
+                    <a class="site-card-box d-flex flex-column align-items-center">
+                        <img width="90" height="70"
+                            src="assets/images/electric-vehicle-orange.svg"/>
+                        <span>Trafik Sigortası</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <div class="site-see-all mt-3 p-3">
+          <a href="#" class="see-all-button" id="see-all">
+          Tüm Ürünleri Gör
+        </a>
+      </div>
+    </div>
+</header>
+    <section class="color-bg-03 section-policy"> 
+      <div class="container">
+        <div class="policy">
+          <h2 class="policy-title text-align-center font-weight-semi-bold" style="font-size: 28px; font-weight: 650;"> Poliçemi neden Sigortam.net’ten almalıyım? </h2>
+          <div class="policy-content">
+            <div class="policy-Item">
+              <img  alt="Doğru Ürün" width="90" height="90" src="assets/images/policy-trustworthy.svg">
+              <span class="font-weight-semi-bold">Doğru Ürün</span>
+              <p>Yenilenen yapay zekâmızla, onlarca sigorta teklifi arasından ucuzunu, sana uygununu ve kapsamlısını buluyoruz. Net teminatlar ve net fiyatlarla kararın hep net olsun.</p>
+            </div>
+            <div class="policy-Item">
+              <img alt="İyi Fiyat" width="90" height="90" src="assets/images/policy-price.svg">
+              <span class="font-weight-semi-bold">İyi Fiyat</span>
+              <p>Önceliğimiz her zaman sensin. Çalıştığımız tüm şirketlerde bütçeni düşünerek “en iyi fiyat garantisi” sunuyoruz.</p>
+            </div>
+            <div class="policy-Item">
+              <img alt="7/24 Hizmet" width="90" height="90" src="assets/images/policy-with-you.svg">
+              <span class="font-weight-semi-bold">7/24 Hizmet</span>
+              <p> 24 yıllık tecrübemiz ve uzman sigorta danışmanlarımızla 7/24 her ihtiyacında yanındayız. Üstelik hasar anında saniyeler içinde bize ulaşabilirsin. </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+        <div class="phone-container">
+          <div class="phone-container-left-side">
+            <div class="phone-container-content-block" id="block1">
+              <div class="content-block-title">Hangi ürün bana en uygun diye düşünme, biz senin için en net teklifleri sıraladık bile!</div>
+              <div class="content-block-detail">
+                Tüm teminatları tek tek inceledik, ihtiyaçlarına en uygun olan teminatları belirledik. Sana özel kapsamlı ve fiyatı uygun ürün önerileri hazırladık.
+              </div>
+            <div class="content-block-button"> Hemen Teklif Al </div></div>
+            <div class="phone-container-content-block" id="block2">
+              <div class="content-block-title">Sadece 2 dakikada tüm teklifleri kolayca karşılaştır.</div>
+              <div class="content-block-detail">
+                20+ sigorta şirketinden teklifleri tek platformda karşılaştır, internete özel indirimlerle uygun fiyata sigortan anında başlasın.
+              </div>
+              <div class="content-block-button"> Hemen Teklif Al </div>
+            </div>
+          </div>
+          <div class="phone-container-right-side">
+            <div class="phone-container-sticky-div1">
+              <img data-src="assets/" width="270" height="530" src="assets/images/phone-mockup.webp"><div style="color: #717171;font-size: 11px;line-height: 16px;letter-spacing: -0.16px;text-align: center;"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    
+<!-- FOOTER BAŞLANGIÇ -->
 <footer class="bg-light text-dark pt-5 pb-4">
     <div class="container">
         <div class="row">
-            <div class="col-md-10 p-3">
+            <div class="col-md-9 p-3">
                 <div class="row">
                     <div class="col-12 text-left">
                         <img src="assets/images/app-logo-goat.svg" alt="Sigortam.net Logo" height="mx-auto">
@@ -120,7 +274,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-2 p-3">
+            <div class="col-md-3 p-3">
                 <div class="row">
                     <div class="col-12 p-2 text-end">
                             <img src="assets/images/snet-gold-winner-badge.webp" alt="Ödüller" class="mb-2" height="60px">
@@ -148,10 +302,10 @@
                 </div>
             </div>
         </div>
-                <!-- ✅ Alt Bilgi -->
+                <!-- Alt Bilgi -->
                 <hr class="my-4">
                 <div class="text-right">
-                    <p class="mb-0">Sigortam.net bir <img src="assets/images/ilab@2022.svg" alt="iLab" height="20px">  grup şirketidir.</p>
+                    <p class="mb-4">Sigortam.net bir  <img src="assets/images/ilab@2022.svg" alt="iLab" height="20px">   grup şirketidir.</p>
                     <p class="text-muted">
                         Kariyer.net - Arabam.com - Cimri - Emlakjet - Endeksa - HangiKredi - Neredekal.com - ChemOrbis - SteelOrbis
                     </p>
@@ -162,7 +316,7 @@
 
 </footer>
 
-<!-- ✅ FOOTER BİTİŞ -->
+<!-- FOOTER BİTİŞ -->
 
 
     <!-- Bootstrap JS -->
@@ -173,3 +327,4 @@
 
 </body>
 </html>
+
