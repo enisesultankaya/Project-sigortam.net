@@ -307,19 +307,38 @@ ul.list-unstyled.li {
 }
 
 
+
+
 /* header */
 .site-card {
     background-color: #fff;
     border-radius: 10px;
     padding: 15px;
+    font-weight:600;
 }
 
 .site-card-box {
     background-color: #fff;
     border-radius: 10px;
-    padding: 1px;
+    padding: 3px;
+    transition: all 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
 }
 
+.site-card:hover {
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.05);
+}
+
+.site-card-body p {
+    margin-top: 2px;
+    transition: color 0.1s ease-in-out;
+  }
+  
+  .site-card-box:hover .site-card-body p {
+    color: #007bff;
+  }
 
 /* Selection -  Policy */
 
@@ -865,7 +884,7 @@ ul.list-unstyled.li {
     padding: 20px;
     border-radius: 8px;
     text-align: center;
-    margin: 0 auto; /* Tam ortalama */
+    margin: 0 auto; 
   }
   
   h1 {
@@ -911,12 +930,12 @@ ul.list-unstyled.li {
   /* category */
 
  
-.home-page__categoryBranchList {
-    background-color: var(--first-bgcolor);
+.category {
+    background-color:#f5f7f9;
     padding: 100px 0;
   }
   
-  .category-branch-list__content {
+  .category-list-content {
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column;
@@ -926,7 +945,7 @@ ul.list-unstyled.li {
     row-gap: 24px;
   }
   
-  .category-branch-list__contentTitle {
+  .category-content-title {
     font-size: 32px !important;
     line-height: 39px !important;
     font-weight: 700 !important;
@@ -936,7 +955,7 @@ ul.list-unstyled.li {
     display: flex !important;
   }
   
-  .category-branch-list__cards {
+  .category-list-card {
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -953,7 +972,7 @@ ul.list-unstyled.li {
     row-gap: 25px;
   }
   
-  .category-branch-list__cards .branch-card {
+  .category-list-card .branch-card {
     width: 162px;
     height: 162px;
   }
@@ -961,6 +980,8 @@ ul.list-unstyled.li {
   .branch-card {
     width: 200px;
     height: 200px;
+    background-color: #fff;
+    border: none;
   }
   
   .card {
@@ -968,12 +989,12 @@ ul.list-unstyled.li {
     border-radius: 12px;
   }
   
-  .category-branch-list__cards .branch-card__inner {
+  .category-list-card .cards {
     grid-row-gap: 22px;
     row-gap: 22px;
   }
   
-  .branch-card__inner {
+  .cards {
     position: relative;
     height: 100%;
     cursor: pointer;
@@ -981,7 +1002,7 @@ ul.list-unstyled.li {
     row-gap: 16px;
   }
   
-  .branch-card__icon {
+  .card-icon {
     display: flex;
     -webkit-box-align: center;
     align-items: center;
@@ -990,14 +1011,91 @@ ul.list-unstyled.li {
     border-radius: 8px;
   }
   
-  .branch-card__icon img {
+  .card-icon img {
     max-width: 150px;
     max-height: 110px;
   }
   
-  .branch-card__title {
+  .card-title {
     font-size: 15px;
     font-weight: 600 !important;
     text-align: center;
+  }
+
+  
+.branch-list__title {
+    font-weight: 700;
+    color: #1d1e1e;
+  }
+  
+  @media only screen and (min-width: 1400px) {
+    .branch-list__title {
+      font-size: 54px !important;
+      line-height: 72px !important;
+    }
+  }
+  @media only screen and (min-width: 768px) {
+    .branch-list__title {
+      font-size: 45px !important;
+      line-height: 66px !important;
+    }
+  }
+  
+  @media only screen and (min-width: 768px) {
+    .branch-list__subTitle {
+      margin-top: 24px;
+      font-size: 18px;
+      line-height: 23px;
+    }
+  }
+  .branch-list__subTitle {
+    margin-top: 12px;
+    margin-bottom: 14px;
+    color: #515353;
+    font-size: 14px;
+    line-height: 28px;
+    letter-spacing: -0.32px;
+  }
+  
+  .card {
+    transition: all 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.05);
+  }
+  .card-body span {
+    display: inline-block;
+    width: 100%;
+    margin-top: 2px;
+    font-weight: 600 !important;
+    transition: color 0.1s ease-in-out;
+  }
+  
+  .card:hover .card-body span {
+    color: rgb(0, 137, 236);
+  }
+  
+  section {
+    height: 100%;
+    width: 100%;
+  }
+  
+  .branch-list__seeAllProducts {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin: 30px 0 15px;
+  }
+  
+  .branch-list__button {
+    color: #0089ec;
+    font-size: 15px;
+    line-height: 27px;
+    letter-spacing: -0.32px;
+    cursor: pointer;
+    font-weight: 600 !important;
   }
   
